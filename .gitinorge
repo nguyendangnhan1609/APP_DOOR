@@ -1,0 +1,6 @@
+# --- 1. Loại bỏ các thư mục node_modules ---
+**/node_modules/
+
+# --- 2. Loại bỏ tất cả các tệp và thư mục bắt đầu bằng dấu chấm (.) ---
+.*
+**/.*
