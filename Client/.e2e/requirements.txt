@@ -1,0 +1,4 @@
+robotframework>=7.3
+robotframework-browser>=18.9.1
+robotframework-faker>=5.0.0
+robotframework-doctestlibrary>=0.23.1

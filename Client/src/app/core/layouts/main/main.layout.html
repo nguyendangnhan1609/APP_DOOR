@@ -1,0 +1,35 @@
+<div class="admin">
+  <div class="wrapper">
+    <header :aria-label="t('RightSide')">
+      <button class="flex gap-2 items-center">
+        <app-icon className="size-7" [name]="EIcon.Logo" />
+        <h1>{{ t('AppName') }}</h1>
+      </button>
+      <div class="right">
+        <app-dropdown
+          classContainer="!flex items-center"
+          [options]="listLanguage()"
+          [translate]="serviceTranslate.t()">
+          <button [title]="t('ChangeLanguage')">
+            <app-icon className="rounded-lg size-6" [name]="language()" />
+          </button>
+        </app-dropdown>
+        <button (click)="changeTheme()" [title]="t('ChangeTheme')">
+          <app-icon className="size-6" [name]="EIcon.DayNight" />
+        </button>
+        <app-dropdown [options]="listMyProfile" [translate]="serviceTranslate.t()">
+          <button [title]="t('MyInformation')">
+            <app-avatar
+              [src]="sGlobal.user?.()?.avatarUrl"
+              [text]="sGlobal.user?.()?.username"
+              classSize="size-7" />
+          </button>
+        </app-dropdown>
+      </div>
+    </header>
+    <main class="scrollbar">
+      <router-outlet></router-outlet>
+    </main>
+    <footer>{{ t('Footer', { year: currentYear }) }}</footer>
+  </div>
+</div>

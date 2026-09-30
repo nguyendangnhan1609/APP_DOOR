@@ -1,0 +1,10 @@
+{
+  "AppName": "Angular App",
+  "Footer": "Công ty cổ phần React. ©{{year}}",
+  "SignOut": "Đăng xuất",
+  "en": "Tiếng anh",
+  "vi": "Tiếng việt",
+  "RightSide": "Bên phải",
+  "ChangeLanguage": "Thay đổi ngôn ngữ",
+  "ChangeTheme": "Thay đổi chủ đề"
+}

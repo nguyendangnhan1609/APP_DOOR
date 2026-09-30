@@ -1,0 +1,83 @@
+@reference "../../../../tailwind.css";
+
+.menu {
+  @apply bg-base-0 flex w-full min-w-fit items-center;
+
+  &.col {
+    @apply flex-col;
+
+    > li {
+      @apply relative w-full;
+
+      > button:has(+ ul):after {
+        @apply rotate-0;
+      }
+      > ul {
+        @apply top-0 left-full;
+      }
+      &:hover {
+        > ul {
+          @apply visible opacity-100;
+        }
+      }
+    }
+  }
+  li {
+    @apply relative;
+
+    > button {
+      @apply text-base-800 relative flex w-full items-center gap-2 px-2 py-1 text-left;
+
+      &:hover {
+        @apply bg-gray-300;
+      }
+
+      &.active {
+        @apply bg-primary-500 text-base-0;
+
+        &:hover {
+          @apply bg-primary-600;
+        }
+      }
+
+      &.disabled {
+        @apply text-base-400 cursor-not-allowed;
+      }
+
+      &:has(+ ul) {
+        @apply pr-5;
+        &::after {
+          @apply bg-base-800 absolute top-2.5 right-0 size-3.5 rotate-90 bg-cover;
+          content: '';
+          mask: url('/assets/images/arrow.svg') no-repeat 100% 100%;
+          mask-size: cover;
+        }
+      }
+
+      svg {
+        @apply size-5;
+      }
+    }
+    > ul {
+      @apply bg-base-0 invisible absolute top-auto left-auto mt-2 w-max rounded opacity-0 shadow;
+
+      button {
+        &:has(+ ul) {
+          @apply pr-5;
+          &::after {
+            @apply right-1 rotate-0;
+          }
+        }
+      }
+      ul {
+        @apply absolute top-0 mt-0 ml-2;
+        left: 101%;
+      }
+    }
+    &:hover {
+      > ul {
+        @apply visible z-50 mt-0 ml-0 opacity-100 transition-all;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@reference "../../../../tailwind.css";
+
+.modal {
+  @apply bg-base-900/0 fixed inset-0 z-50 flex items-center justify-center transition-all;
+
+  &.open {
+    @apply bg-base-900/40;
+
+    > div {
+      @apply translate-y-0 opacity-100;
+    }
+  }
+  > button {
+    @apply absolute inset-0;
+  }
+
+  &.scrollable {
+    @apply items-start overflow-y-auto p-5;
+  }
+
+  > div {
+    @apply bg-base-0 min-h-32 min-w-80 translate-y-10 rounded-lg opacity-0 shadow transition-all;
+
+    > h3 {
+      @apply px-6 py-4 text-xl font-bold;
+    }
+    > .close {
+      @apply absolute top-6 right-6;
+      svg {
+        @apply size-4;
+      }
+    }
+
+    > .body {
+      @apply px-6;
+    }
+
+    > .footer {
+      @apply flex justify-end gap-3 px-6 py-5;
+    }
+  }
+}

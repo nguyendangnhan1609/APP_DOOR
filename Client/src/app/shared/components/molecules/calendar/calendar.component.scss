@@ -1,0 +1,36 @@
+@reference "../../../../tailwind.css";
+
+.calendar {
+  @apply text-base-800 border-base-200 h-80 w-60 rounded-md border p-3;
+
+  .days {
+    @apply grid grid-cols-7 gap-1;
+
+    > div {
+      @apply text-center;
+    }
+    > button {
+      @apply text-center;
+
+      @apply border-base-200 rounded-sm border py-1;
+
+      &.outside-month {
+        @apply text-base-400 border-0;
+      }
+
+      &.current-day {
+        @apply border-base-500 border-2 font-bold;
+      }
+      &.selected {
+        @apply bg-primary-500 text-base-0 border-primary-500;
+      }
+    }
+  }
+  .header {
+    @apply mb-5 flex items-center justify-between font-bold;
+
+    > button {
+      @apply bg-base-700 text-base-0 rounded-full p-1.5;
+    }
+  }
+}

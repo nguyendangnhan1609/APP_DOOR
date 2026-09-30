@@ -1,0 +1,15 @@
+@reference "../../../../tailwind.css";
+/**
+ * Styles for the data search component.
+ *
+ */
+.search {
+  @apply relative;
+
+  button {
+    @apply absolute top-1/2 right-3 z-10 -translate-y-1/2 transform;
+    svg {
+      @apply fill-base-400 size-3.5;
+    }
+  }
+}

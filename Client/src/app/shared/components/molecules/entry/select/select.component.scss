@@ -1,0 +1,16 @@
+@reference "../../../../../tailwind.css";
+
+.entry-select {
+  @apply relative block;
+
+  .entry {
+    @apply pr-6;
+  }
+  svg {
+    @apply absolute top-1/2 right-2 size-3 -translate-y-1/2 rotate-90 transform transition-all;
+
+    &.open {
+      @apply -rotate-90;
+    }
+  }
+}

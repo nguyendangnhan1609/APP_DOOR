@@ -1,0 +1,12 @@
+@reference "../../../../../tailwind.css";
+
+.entry-date {
+  @apply relative block;
+
+  .entry {
+    @apply pr-6;
+  }
+  svg {
+    @apply absolute top-1/2 right-2 size-4 -translate-y-1/2 transform transition-all;
+  }
+}

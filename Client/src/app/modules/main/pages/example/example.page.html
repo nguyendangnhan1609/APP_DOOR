@@ -1,0 +1,21 @@
+<section class="bg-base-25 px-6 py-5 mt-5 rounded-2xl" aria-label="Example">
+  <app-spin [isLoading]="list.isLoading()">
+    <app-row-virtualizer className="h-36" [data]="list.data()">
+      <ng-template #render let-row="row" let-index="index">
+        <div>{{ row?.title }}</div>
+      </ng-template>
+    </app-row-virtualizer>
+  </app-spin>
+
+  <div class="flex items-center justify-between">
+    <app-tooltip content="Open form modal">
+      <app-button text="Form modal" (handleClick)="fnOpenModal()" />
+    </app-tooltip>
+  </div>
+  <app-button [text]="'test'" (handleClick)="handleSubmit()" />
+  <app-data-grid ref="refTable" [body]="tableBody" [isLoading]="list.isPending()" [columns]="columns"
+    [data]="list.data()" keyId="id" className="max-h-[calc(100vh-22.5rem)]" [pagination]="{}" [translate]="t" />
+  <app-form-modal className="w-2xl" [fields]="fields" [title]="'Form Example'" [isOpen]="stateExample().isVisible"
+    [translate]="serviceTranslate.t()" (handleSubmit)="fnSubmit($event)" (handleCancel)="fnCloseModal()">
+  </app-form-modal>
+</section>

@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@reference "./app/tailwind.css";
+
+@for $i from 1 through 9 {
+  .intro-x:nth-child(#{$i}) {
+    transform: translateX(5rem);
+    @apply animate-intro-x-animation opacity-0;
+    z-index: #{10 - $i};
+    animation-delay: 0#{$i}s;
+  }
+  .-intro-x:nth-child(#{$i}) {
+    transform: translateX(-5rem);
+    @apply animate-intro-x-animation opacity-0;
+    z-index: #{10 - $i};
+    animation-delay: 0#{$i}s;
+  }
+}

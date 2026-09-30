@@ -1,0 +1,26 @@
+{
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "tsconfig.json": "tsconfig.*.json, env.d.ts, .env, .env.sampe",
+    "angular.json": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*,  .eslint*, eslint*, .prettier*, prettier*, .editorconfig, commitlint.config.cjs, .postcssrc.json, .gitignore",
+    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "[css]": {
+    "editor.formatOnSave": false
+  },
+  "[handlebars]": {
+    "editor.formatOnSave": false
+  },
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "tailwindCSS.experimental.configFile": "src/app/tailwind.css",
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  }
+}

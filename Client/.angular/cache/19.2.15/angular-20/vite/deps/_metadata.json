@@ -1,0 +1,127 @@
+{
+  "hash": "18f38ed2",
+  "configHash": "3a733df6",
+  "lockfileHash": "cf24125b",
+  "browserHash": "59393e23",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "99c6ebbf",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "1997fcab",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "08ed30ce",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "24f5dd23",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "5ff03d9b",
+      "needsInterop": false
+    },
+    "@floating-ui/dom": {
+      "src": "../../../../../../node_modules/@floating-ui/dom/dist/floating-ui.dom.mjs",
+      "file": "@floating-ui_dom.js",
+      "fileHash": "3de7eca0",
+      "needsInterop": false
+    },
+    "@ngrx/signals": {
+      "src": "../../../../../../node_modules/@ngrx/signals/fesm2022/ngrx-signals.mjs",
+      "file": "@ngrx_signals.js",
+      "fileHash": "754a439c",
+      "needsInterop": false
+    },
+    "@tanstack/angular-form": {
+      "src": "../../../../../../node_modules/@tanstack/angular-form/dist/fesm2022/tanstack-angular-form.mjs",
+      "file": "@tanstack_angular-form.js",
+      "fileHash": "5bb18212",
+      "needsInterop": false
+    },
+    "@tanstack/angular-query-experimental": {
+      "src": "../../../../../../node_modules/@tanstack/angular-query-experimental/index.mjs",
+      "file": "@tanstack_angular-query-experimental.js",
+      "fileHash": "76dae007",
+      "needsInterop": false
+    },
+    "@tanstack/angular-table": {
+      "src": "../../../../../../node_modules/@tanstack/angular-table/build/lib/fesm2022/tanstack-angular-table.mjs",
+      "file": "@tanstack_angular-table.js",
+      "fileHash": "62744346",
+      "needsInterop": false
+    },
+    "@tanstack/angular-virtual": {
+      "src": "../../../../../../node_modules/@tanstack/angular-virtual/build/fesm2022/tanstack-angular-virtual.mjs",
+      "file": "@tanstack_angular-virtual.js",
+      "fileHash": "eb3bb089",
+      "needsInterop": false
+    },
+    "dayjs": {
+      "src": "../../../../../../node_modules/dayjs/dayjs.min.js",
+      "file": "dayjs.js",
+      "fileHash": "155f103b",
+      "needsInterop": true
+    },
+    "dayjs/plugin/localizedFormat": {
+      "src": "../../../../../../node_modules/dayjs/plugin/localizedFormat.js",
+      "file": "dayjs_plugin_localizedFormat.js",
+      "fileHash": "add9d266",
+      "needsInterop": true
+    },
+    "query-string": {
+      "src": "../../../../../../node_modules/query-string/index.js",
+      "file": "query-string.js",
+      "fileHash": "80d9811c",
+      "needsInterop": false
+    },
+    "uuid": {
+      "src": "../../../../../../node_modules/uuid/dist/esm-browser/index.js",
+      "file": "uuid.js",
+      "fileHash": "b9b990fb",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "RN252AT2-4UI4VQJT": {
+      "file": "RN252AT2-4UI4VQJT.js"
+    },
+    "dev-MVJE5YQS": {
+      "file": "dev-MVJE5YQS.js"
+    },
+    "EDEL3XIZ-CHL2SIGC": {
+      "file": "EDEL3XIZ-CHL2SIGC.js"
+    },
+    "chunk-KNGQUBPL": {
+      "file": "chunk-KNGQUBPL.js"
+    },
+    "chunk-ULV2QTJC": {
+      "file": "chunk-ULV2QTJC.js"
+    },
+    "chunk-4BA3BH3U": {
+      "file": "chunk-4BA3BH3U.js"
+    },
+    "chunk-IDFO3225": {
+      "file": "chunk-IDFO3225.js"
+    },
+    "chunk-NZ5IK722": {
+      "file": "chunk-NZ5IK722.js"
+    },
+    "chunk-MSVQUNDQ": {
+      "file": "chunk-MSVQUNDQ.js"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@reference "../../../../tailwind.css";
+
+.image-shine,
+.glightbox {
+  @apply relative flex overflow-hidden;
+
+  &:before {
+    @apply absolute top-0 -left-3/4 z-10 block h-full w-1/2 skew-x-[-25deg] bg-gradient-to-r from-white;
+    content: '';
+  }
+  &:hover:before {
+    @apply animate-shine;
+  }
+}

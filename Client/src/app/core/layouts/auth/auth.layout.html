@@ -1,0 +1,14 @@
+<div class="login">
+  <div class="wrapper">
+    <header class="-intro-x">
+      <div class="block-grap-1">
+        <app-icon className="size-6" [name]="EIcon.Logo"></app-icon>
+        <h4>{{ t('AppName') }}</h4>
+      </div>
+      <h5 class="uppercase">{{ t('EnterpriseManagementSystem') }}</h5>
+    </header>
+    <main class="intro-x">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

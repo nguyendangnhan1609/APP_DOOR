@@ -1,0 +1,111 @@
+@reference "../../../../tailwind.css";
+/**
+ * This is the documentation comment for the .c-virtual-scroll class.
+ */
+.data-grid {
+  .c-virtual-scroll {
+    @apply min-h-96 w-full;
+
+    .empty {
+      @apply text-base-400 absolute top-0 left-0 flex h-full w-full flex-col items-center justify-center gap-2;
+    }
+
+    .round-checkbox {
+      .row-selection {
+        @apply opacity-0;
+
+        .ant-checkbox {
+          .ant-checkbox-inner,
+          .ant-checkbox-inner:after {
+            @apply rounded-2xl;
+          }
+        }
+
+        &.ant-checkbox-wrapper-checked {
+          @apply opacity-100;
+        }
+      }
+
+      &:hover .row-selection {
+        @apply opacity-100;
+      }
+    }
+
+    thead {
+      @apply sticky top-0 z-10 grid;
+      tr {
+        @apply flex;
+
+        &:first-child th {
+          &:first-child {
+            @apply rounded-tl-lg;
+          }
+          &:last-child {
+            @apply rounded-tr-lg;
+          }
+        }
+
+        th {
+          @apply bg-primary-50 relative flex min-w-8 p-1 text-sm;
+
+          &.has-filter {
+            @apply pr-6;
+          }
+
+          > .title {
+            @apply text-primary-700 block w-full items-center justify-between truncate;
+
+            &.hide {
+              @apply absolute top-1/2 h-2 -translate-y-1/2 transform cursor-zoom-in;
+            }
+
+            svg.sort {
+              @apply absolute top-1/2 right-1 size-2.5 -translate-y-1/2 transform transition-all;
+            }
+          }
+
+          .resizer {
+            @apply bg-primary-100/30 absolute right-0 w-0.5 cursor-col-resize touch-none;
+            height: calc(100% - 0.6rem);
+            top: 0.3rem;
+
+            &.resizing {
+              @apply bg-base-800;
+            }
+          }
+          .filter {
+            @apply -mr-6 flex items-center transition-all;
+
+            svg {
+              @apply size-2.5;
+            }
+          }
+
+          &:hover .filter {
+            @apply opacity-100;
+          }
+        }
+      }
+    }
+    tbody {
+      @apply relative grid;
+
+      tr {
+        @apply absolute flex w-full;
+
+        &:hover > td {
+          @apply bg-primary-50/50;
+        }
+        td {
+          @apply bg-base-0 border-primary-50/80 flex min-w-11 items-center border-b px-1;
+          > div {
+            @apply w-full truncate;
+          }
+          svg {
+            @apply transition-all;
+          }
+        }
+      }
+    }
+  }
+}

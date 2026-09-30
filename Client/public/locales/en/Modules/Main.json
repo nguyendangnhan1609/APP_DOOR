@@ -1,0 +1,11 @@
+{
+  "AppName": "Angular App",
+  "Footer": "React Company Ltd. ©{{year}}",
+  "SignOut": "Sign out",
+  "en": "English",
+  "vi": "Vietnamese",
+  "RightSide": "Right Side",
+  "ChangeLanguage": "Change Language",
+  "ChangeTheme": "Change Theme",
+  "MyInformation": "My Information"
+}

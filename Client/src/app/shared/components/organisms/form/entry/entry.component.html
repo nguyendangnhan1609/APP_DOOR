@@ -1,0 +1,147 @@
+<ng-container [ngSwitch]="fieldForm().type">
+  <input
+    *ngSwitchCase="EFormType.Hidden"
+    [value]="field().api.state.value ?? ''"
+    [name]="field().name()"
+    type="hidden"
+    tabindex="-1" />
+
+  <!-- EntryMask -->
+  <app-entry-mask
+    *ngSwitchDefault
+    [name]="field().name()"
+    [value]="$any(fieldState().value)"
+    [disabled]="!!fieldForm().disabled?.({ value: fieldState().value })"
+    [placeholder]="
+      t(fieldForm().placeholder ?? 'Enter', {
+        title: translate()(fieldForm().title).toLowerCase(),
+      })
+    "
+    [maxLength]="fieldForm().maxLength"
+    [formApi]="formApi()"
+    [mask]="fieldForm().text?.mask"
+    [iconBefore]="fieldForm().text?.iconBefore"
+    [iconAfter]="fieldForm().text?.iconAfter"
+    (handleBlur)="
+      fieldForm().onBlur?.({
+        value: $any($event).target.value,
+        formApi: formApi(),
+        name: field().name(),
+      });
+      field().api.handleBlur()
+    "
+    (handleChange)="
+      fieldForm().onChange?.($any($event).target.value);
+      field().api.handleChange($any($event).target.value)
+    " />
+
+  <!-- EntryPassword -->
+  <app-entry-password
+    *ngSwitchCase="EFormType.Password"
+    [name]="field().name()"
+    [value]="$any(fieldState().value)"
+    [disabled]="!!fieldForm().disabled?.({ value: fieldState().value })"
+    [placeholder]="
+      t(fieldForm().placeholder ?? 'Enter', {
+        title: translate()(fieldForm().title).toLowerCase(),
+      })
+    "
+    (handleBlur)="
+      fieldForm().onBlur?.({
+        value: $any($event).target.value,
+        formApi: formApi(),
+        name: field().name(),
+      });
+      field().api.handleBlur()
+    "
+    (handleChange)="
+      fieldForm().onChange?.($any($event).target.value);
+      field().api.handleChange($any($event).target.value)
+    " />
+
+  <!-- EntryTextarea -->
+  <app-entry-textarea
+    *ngSwitchCase="EFormType.Textarea"
+    [name]="field().name()"
+    [value]="$any(fieldState().value)"
+    [disabled]="!!fieldForm().disabled?.({ value: fieldState().value })"
+    [placeholder]="
+      t(fieldForm().placeholder ?? 'Enter', {
+        title: translate()(fieldForm().title).toLowerCase(),
+      })
+    "
+    [maxLength]="fieldForm().maxLength ?? 1000"
+    (handleBlur)="
+      fieldForm().onBlur?.({
+        value: $any($event).target.value,
+        formApi: formApi(),
+        name: field().name(),
+      });
+      field().api.handleBlur()
+    "
+    (handleChange)="
+      fieldForm().onChange?.($any($event).target.value);
+      field().api.handleChange($any($event).target.value)
+    " />
+
+  <!-- EntryChoice -->
+  <app-entry-choice
+    *ngSwitchCase="
+      fieldForm().type === EFormType.Radio || fieldForm().type === EFormType.Checkbox
+        ? fieldForm()?.type
+        : ''
+    "
+    [name]="field().name()"
+    [value]="$any(fieldState().value)"
+    [disabled]="!!fieldForm().disabled?.({ value: fieldState().value })"
+    [type]="$any(fieldForm().type)"
+    [options]="fieldForm().options!"
+    (handleChange)="fieldForm().onChange?.($any($event)); field().api.handleChange($any($event))" />
+
+  <!-- EntrySelect -->
+  <app-entry-select
+    *ngSwitchCase="EFormType.Select"
+    [name]="field().name()"
+    [value]="$any(fieldState().value)"
+    [disabled]="!!fieldForm().disabled?.({ value: fieldState().value })"
+    [placeholder]="
+      t(fieldForm().placeholder ?? 'Choose', {
+        title: translate()(fieldForm().title).toLowerCase(),
+      })
+    "
+    [options]="fieldForm().options!"
+    [isMultiple]="fieldForm().isMultiple"
+    [translate]="translate()"
+    (handleChange)="fieldForm().onChange?.($any($event)); field().api.handleChange($any($event))" />
+
+  <!-- EntryDate -->
+  <app-entry-date
+    *ngSwitchCase="EFormType.Date"
+    [name]="field().name()"
+    [value]="$any(fieldState().value)"
+    [disabled]="!!fieldForm().disabled?.({ value: fieldState().value })"
+    [placeholder]="
+      t(fieldForm().placeholder ?? 'Choose', {
+        title: translate()(fieldForm().title).toLowerCase(),
+      })
+    "
+    (handleChange)="fieldForm().onChange?.($any($event)); field().api.handleChange($any($event))" />
+
+  <!-- EntryUpload -->
+  <app-entry-upload
+    *ngSwitchCase="EFormType.Upload"
+    [value]="$any(fieldState().value)"
+    [isMultiple]="!!fieldForm().isMultiple"
+    (handleChange)="fieldForm().onChange?.($any($event)); field().api.handleChange($any($event))" />
+</ng-container>
+
+<div class="feedback">
+  @if (fieldState().meta.isTouched && fieldState().meta.errors.length > 0) {
+    {{ convertTranslate(fieldState().meta.errors.join(',')) }}
+  } @else if (fieldState().meta.isValidating) {
+    {{ t('Validating') }}
+    <app-spin></app-spin>
+  }
+  {{ isError() ? '' : '|' }}
+</div>
+<app-icon *ngIf="isError()" [name]="EIcon.Error" className="svg-error" />

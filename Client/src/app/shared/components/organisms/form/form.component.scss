@@ -1,0 +1,111 @@
+@reference "../../../../tailwind.css";
+
+/**
+ *
+ * This file contains the styles for the form component.
+ * The styles defined here are applied to the .entry class.
+ */
+.entry {
+  @apply text-base-800 flex items-center rounded-lg border;
+  &:focus {
+    @apply bg-base-0 shadow-primary-100 shadow outline-0;
+  }
+  &::placeholder {
+    @apply text-base-400;
+  }
+  div:has(> &) {
+    span {
+      @apply border-base-300 bg-base-0 text-base-800 absolute top-0 flex size-10 items-center justify-center border;
+
+      &.before {
+        @apply left-0 rounded-l-lg border-r-0;
+
+        svg {
+          @apply size-5;
+        }
+      }
+      &.after {
+        @apply right-0 rounded-r-lg border-l-0;
+
+        svg {
+          @apply size-5;
+        }
+      }
+    }
+  }
+}
+input.entry {
+  @apply border-base-300 bg-base-0 h-8 w-full px-4;
+  &.disabled {
+    @apply bg-base-200 cursor-not-allowed focus:shadow-none;
+  }
+  &.before {
+    @apply rounded-r-lg pl-10;
+  }
+  &.after {
+    @apply rounded-l-lg pr-10;
+  }
+}
+textarea.entry {
+  @apply border-base-300 bg-base-0 w-full px-4 py-2.5;
+
+  &::placeholder {
+    @apply text-base-400;
+  }
+}
+
+.form {
+  @apply mb-3 grid grid-cols-12 gap-3;
+
+  &.inline {
+    @apply flex;
+
+    .item {
+      @apply mb-0 flex-col items-start;
+    }
+  }
+
+  .item {
+    @apply py-1;
+
+    .feedback {
+      font-size: 0.688rem;
+      line-height: 0.7rem;
+      @apply text-error-500 invisible absolute top-0 opacity-0 transition-all;
+    }
+    .svg-error {
+      @apply text-error-500 bg-base-0 absolute top-1/2 right-3 z-10 h-5 w-5 -translate-y-1/2 transform py-0.5;
+    }
+    &.type-password {
+      .svg-error {
+        @apply right-9;
+      }
+    }
+  }
+
+  .error {
+    @apply relative block;
+    .feedback {
+      padding-top: 1px;
+      @apply visible top-full opacity-100;
+    }
+    .entry {
+      @apply border-error-500;
+    }
+  }
+
+  .icon {
+    @apply absolute right-3 z-10;
+    top: calc(50% - 0.6rem);
+
+    svg {
+      @apply fill-base-800 size-5;
+    }
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    @apply m-0;
+    -webkit-appearance: none;
+  }
+}

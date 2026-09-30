@@ -1,0 +1,42 @@
+@reference "../../../../tailwind.css";
+
+label.choice {
+  @apply relative flex cursor-pointer items-center select-none;
+
+  &.disabled {
+    @apply cursor-not-allowed opacity-60;
+  }
+
+  > input {
+    @apply pointer-events-none absolute m-0 h-5 w-5 opacity-0 transition-colors;
+  }
+
+  > div {
+    @apply border-primary-500 mr-2 box-border inline-flex h-5 w-5 items-center justify-center border-2 transition;
+
+    &.checkbox:focus-within,
+    &.radio:focus-within {
+      @apply outline-primary-500 outline-2 outline-offset-2;
+    }
+
+    &.checkbox {
+      @apply rounded;
+    }
+
+    &.radio {
+      @apply rounded-full;
+    }
+
+    &.checked {
+      @apply bg-primary-500;
+    }
+
+    svg {
+      @apply text-base-0 block size-3;
+    }
+
+    > span {
+      @apply bg-base-0 block h-2.5 w-2.5 rounded-full;
+    }
+  }
+}

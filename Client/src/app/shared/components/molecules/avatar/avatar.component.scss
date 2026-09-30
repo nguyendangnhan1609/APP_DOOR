@@ -1,0 +1,16 @@
+@reference "../../../../tailwind.css";
+
+.avatar {
+  @apply flex items-center gap-2 text-left;
+
+  small {
+    @apply border-primary-500 bg-primary-200 text-primary-500 -ml-2 inline-block rounded-full border text-center leading-5;
+  }
+
+  img {
+    @apply rounded-full object-center;
+  }
+  p {
+    @apply flex items-center justify-center rounded-full text-center;
+  }
+}

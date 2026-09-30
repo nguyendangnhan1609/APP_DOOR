@@ -1,0 +1,53 @@
+<app-spin [isLoading]="stateEntryUpload().isLoading" className="entry-upload">
+  <input
+    class="hidden"
+    #refInput
+    [accept]="accept()"
+    [multiple]="isMultiple()"
+    (change)="fnUpload(refInput.files)"
+    type="file" />
+  <div [ngClass]="{ list: isMultiple() }">
+    <div class="relative" *ngFor="let file of stateEntryUpload().listFiles; let index = index">
+      <app-image
+        class="size-full"
+        [src]="fnGetData(file, 'path')"
+        [alt]="fnGetData(file, 'name')" />
+
+      <button
+        class="btn-move top-1"
+        *ngIf="index > 0"
+        (click)="fnMoveImage(index, index - 1)"
+        type="button">
+        <app-icon class="rotate-180" [name]="EIcon.Arrow"></app-icon>
+      </button>
+
+      <button
+        *ngIf="index < stateEntryUpload().listFiles.length - 1"
+        [ngClass]="{ 'btn-move': true, 'top-8': index > 0, 'top-1': index === 0 }"
+        (click)="fnMoveImage(index, index + 1)"
+        type="button">
+        <app-icon [name]="EIcon.Arrow"></app-icon>
+      </button>
+
+      <button
+        *ngIf="showBtnDelete()(file)"
+        [ngClass]="classBtnDelete(index)"
+        (click)="fnConfirmDelete(file)"
+        type="button">
+        <app-icon [name]="EIcon.Close"></app-icon>
+      </button>
+    </div>
+  </div>
+  <div class="mt-2 flex gap-2">
+    <app-button
+      [size]="ESize.Small"
+      [icon]="EIcon.Upload"
+      (handleClick)="fnClickUpload()"
+      text="Upload" />
+    <app-button
+      [size]="ESize.Small"
+      [icon]="EIcon.Paste"
+      (handlePaste)="fnPaste($event)"
+      text="Paste" />
+  </div>
+</app-spin>

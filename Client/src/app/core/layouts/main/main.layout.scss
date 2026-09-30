@@ -1,0 +1,41 @@
+@reference "../../../tailwind.css";
+/**
+ *
+ * This file contains the styles for the admin layout.
+ *
+ * @class .admin
+ * @description Represents the admin layout container.
+ */
+.admin {
+  @apply flex;
+
+  > .wrapper {
+    @apply bg-base-50 grow px-0;
+    header {
+      @apply bg-primary-700 text-base-0 flex h-12 items-center justify-between px-5;
+
+      .right {
+        @apply flex items-center gap-3;
+        button {
+          @apply h-8 rounded-lg px-1 text-sm;
+          &:hover {
+            @apply bg-primary-600;
+          }
+        }
+      }
+    }
+
+    main {
+      @apply relative mx-auto overflow-auto pl-12 md:pl-0;
+      min-height: calc(100vh - 5.4rem);
+
+      @media only screen and (min-width: 768px) {
+        width: calc(100vw - 14rem);
+      }
+    }
+
+    footer {
+      @apply w-full pt-1.5 text-center;
+    }
+  }
+}

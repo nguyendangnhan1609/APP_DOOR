@@ -1,0 +1,18 @@
+<section class="intro-x" [attr.aria-label]="t('SignIn')">
+  <h1>{{ t('SignIn') }}</h1>
+  <h5>{{ t('EnterYourDetailsToLoginToYourAccount') }}</h5>
+  <app-form
+    [isEnterSubmit]="true"
+    [isLoading]="sGlobal.isLoading?.()"
+    [fields]="fields()"
+    [translate]="serviceTranslate.t()"
+    (handleSubmit)="sGlobal.postLogin($event.value!)">
+    <ng-template #footer let-canSubmit="canSubmit" let-form="form">
+      <app-button
+        [text]="t('LogIn')"
+        (handleClick)="form.handleSubmit()"
+        [disabled]="!canSubmit()"
+        [size]="ESize.Large" />
+    </ng-template>
+  </app-form>
+</section>

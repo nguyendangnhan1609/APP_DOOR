@@ -1,0 +1,43 @@
+@reference "../../../../tailwind.css";
+
+.dialog {
+  @apply bg-base-900/0 fixed inset-0 z-50 flex items-center justify-center transition-all;
+
+  &.open {
+    @apply bg-base-900/40;
+
+    > div {
+      @apply translate-y-0 opacity-100;
+    }
+  }
+  > button {
+    @apply absolute inset-0;
+  }
+
+  &.scrollable {
+    @apply items-start overflow-y-auto p-5;
+  }
+
+  > div {
+    @apply bg-base-0 min-h-32 min-w-80 translate-y-10 rounded-lg p-5 opacity-0 shadow transition-all;
+
+    > h3 {
+      @apply text-center text-xl font-bold;
+
+      svg {
+        @apply mx-auto mb-2 size-10;
+      }
+    }
+    > .body {
+      @apply pt-3 pb-5 text-center;
+    }
+
+    > .footer {
+      @apply flex gap-2;
+
+      * {
+        @apply w-full;
+      }
+    }
+  }
+}

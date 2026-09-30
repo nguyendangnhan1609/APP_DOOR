@@ -1,0 +1,29 @@
+@reference "../../../../tailwind.css";
+/**
+ * This file contains the styles for the pagination component.
+ */
+.pagination {
+  @apply mt-2 flex flex-col-reverse items-center justify-between lg:flex-row;
+
+  .left {
+    @apply relative mt-2 flex items-center gap-2 sm:mt-0;
+  }
+
+  .right {
+    @apply bg-base-50 flex justify-center gap-1 rounded-lg p-1 sm:flex-wrap;
+
+    > button {
+      @apply text-base-800 hover:bg-base-400 min-w-6 rounded-lg px-1.5 py-0.5 text-center text-sm font-medium;
+
+      &.active {
+        @apply bg-base-500 text-base-50;
+      }
+      &.disabled {
+        @apply text-base-400;
+      }
+      svg {
+        @apply size-2;
+      }
+    }
+  }
+}

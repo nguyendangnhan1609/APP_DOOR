@@ -1,0 +1,25 @@
+@reference "../../../../tailwind.css";
+
+.tooltip {
+  @apply bg-base-900 text-base-0 relative z-50 rounded px-3 py-1.5 whitespace-nowrap opacity-0 shadow transition-opacity;
+
+  &-container {
+    @apply inline-flex;
+  }
+
+  > .arrow {
+    @apply bg-base-900 absolute h-2.5 w-2.5;
+  }
+
+  &.dropdown {
+    @apply bg-base-0 p-0;
+
+    .menu.col {
+      @apply rounded;
+
+      li > button {
+        @apply rounded;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@reference "../../../../../tailwind.css";
+
+.entry-upload {
+  > div:not(.list) img {
+    @apply h-full w-full;
+  }
+
+  > div.list {
+    @apply grid grid-cols-2 gap-2 sm:grid-cols-3;
+  }
+  img {
+    @apply h-24 object-cover object-center;
+  }
+
+  .float-buttons {
+    @apply relative;
+
+    button {
+      @apply bg-base-100 absolute right-1 size-5 rounded-full transition-all;
+    }
+    svg {
+      @apply m-1 size-3;
+    }
+
+    .btn-delete {
+      @apply text-error-500;
+
+      &:hover {
+        @apply text-base-100 bg-error-500;
+      }
+    }
+
+    .btn-move {
+      @apply text-primary-500;
+
+      &:hover {
+        @apply text-base-100 bg-primary-500;
+      }
+    }
+  }
+  .footer-buttons {
+    @apply mt-2 flex gap-2;
+  }
+}
